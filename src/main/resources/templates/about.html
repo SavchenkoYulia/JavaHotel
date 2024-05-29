@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title th:text="|${title}!|" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+
+
+<header th:insert="blocks/header::header"></header>
+<hr>
+
+<div id="carouselExampleIndicators" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="/images/img_1.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="/images/img_2.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="/images/img_3.png" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <img src="/images/img_4.png" class="rounded" alt="..." style="width: 100%;">
+    </div>
+    <div class="col-md-6 d-flex align-items-center justify-content-center">
+      <div class="card" style="max-width: none;">
+        <div class="card-body">
+          <h5 class="card-title">Знайомство з Sendina</h5>
+          <p class="card-text">Комплекс розташований в самому серці Прикарпаття, в м Трускавці – всесвітньо відомому бальнеологічному курорті. «Sendina» – це поєднання висококласного сервісу, вишуканого інтер’єру і комфортного відпочинку з професійним медичним супроводом. Це унікальне місце з гірськими пейзажами, кристально чистим повітрям і цілющими джерелами мінеральних вод було створено самою природою для заспокоєння і відновлення сил.</p>
+          <a href="/about" class="card-link">Детальніше</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 d-flex align-items-center justify-content-center">
+        <div class="card" style="max-width: none;">
+          <div class="card-body">
+            <h5 class="card-title">Інфраструктура</h5>
+            <p class="card-text">Комплекс розташовано на зеленій території передгір’я Карпат загальною площею 12 га. Курортний комплекс має всі умови для комфортного та якісного відпочинку. На території комплексу розташовані СПА-центр, внутрішній басейн і відкрита аквазона, тренажерний зал, розважальний центр із більярдом, боулінгом і дискотеками, відкриті тенісні корти, торговий пасаж, банк та багато іншого. Для найменших відвідувачів у «Sendina» функціонує дитячий клуб, майданчик на свіжому повітрі та дитяче кафе. Відкрита аквазона обладнана водними гірками та теплим дитячим басейном</p>
+            <a href="/about" class="card-link">Детальніше</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <img src="/images/tachka.png" class="rounded" alt="..." style="width: 100%;">
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="/images/ded.png" class="rounded" alt="..." style="width: 100%;">
+      </div>
+      <div class="col-md-6 d-flex align-items-center justify-content-center">
+        <div class="card" style="max-width: none;">
+          <div class="card-body">
+            <h5 class="card-title">Бальнеокурорт Трускавець</h5>
+            <p class="card-text">Трускавець — один із найдавніших курортів Європи, який отримав усесвітню популярність завдяки високій концентрації природних джерел мінеральних вод із цілющими властивостями. Мінеральні води Трускавця відрізняються за хімічним складом і рівнем мінералізації, тут відкрито понад 25 джерел гідрокарбонатних, сульфатних, натрієвих, кальцієво-магнієвих, сульфатно-хлоридно й інших мінеральних вод.
+              На території комплексу «Sendina» функціонує власний бювет із найвідомішими мінеральними водами курорту.</p>
+            <a href="/about" class="card-link">Детальніше</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+<div class="container">
+
+</div>
+<div th:insert="blocks/footer::footer"></div>
+
+</body>
+
+</html>

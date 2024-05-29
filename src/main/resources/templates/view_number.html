@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="|${title}!|"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+<!--<p th:text="|Hello, ${title}!|" />
+<h4 th:text="|${developer}!|"/>
+-->
+
+<header th:insert="blocks/header::header"></header>
+
+<div th:each="tmp : ${room}">
+    <img th:src="${tmp.img_room}" class="card-img-top" th:alt="'Image for ' + ${tmp.title}" style="height: 300px; object-fit: cover; width: 100%;">
+
+    <div style="margin-left: 300px; margin-right: 300px;">
+        <div style="float: left;">
+            <p class="fs-2" style="display: inline-block;" th:text="${tmp.title}"/>
+            <h6 class="fs-4" style="display: inline-block; color: #4dab14" th:text="${tmp.price}"/>
+        </div>
+
+    </div>
+    <div style="text-align: center;">
+        <form th:action="'/number/' + ${tmp.id} + '/reserve'" method="post">
+            <button type="submit" class="btn btn-success">Забронювати</button>
+        </form>
+    </div>
+
+    <div class="text-end">
+        <a href="/number" type="button" class="btn btn-secondary">Назад</a>
+        <a th:href="'/number/'+${tmp.getId()}+'/edit'" class="btn btn-warning"> Редагувати</a>
+        <form th:action="'/number/'+${tmp.getId()}+'/delete'" method="post" class="d-inline">
+            <button class="btn btn-dark" name="btn" type="submit">Видалити</button>
+        </form>
+    </div>
+
+    <p class="fs-4" style="text-align: center;">Опис</p>
+    <hr>
+
+    <p class="text-lowercase" style="text-align: center;" th:text="${tmp.fullContent}" />
+</div>
+<p class="fs-4" style="text-align: center;">Що є в номері</p>
+<hr>
+<div style="display: flex; justify-content: space-between; width: 60%; margin: auto;">
+    <div>
+        <ul style="list-style-type: none; padding: 0;">
+            <li>&#10003; міні-бар</li>
+            <li>&#10003; ванна</li>
+            <li>&#10003; душ</li>
+            <li>&#10003; електрочайник</li>
+            <li>&#10003; кавомашина</li>
+            <li>&#10003; кава / чай в номері</li>
+            <li>&#10003; диван (не розкладний)</li>
+            <li>&#10003; дитяче ліжечко (при необхідності)</li>
+            <li>&#10003; туалет</li>
+            <li>&#10003; телефон</li>
+            <li>&#10003; кондиціонер</li>
+            <li>&#10003; фен</li>
+            <li>&#10003; халат і тапочки</li>
+        </ul>
+    </div>
+    <div>
+        <ul style="list-style-type: none; padding: 0;">
+            <li>&#10003; комплект туалетного приладдя</li>
+            <li>&#10003; опалення</li>
+            <li>&#10003; кабельне ТБ</li>
+            <li>&#10003; килимове покриття</li>
+            <li>&#10003; LCD-телевізор</li>
+            <li>&#10003; плиткова / мармурова підлога</li>
+            <li>&#10003; класичне вікно</li>
+            <li>&#10003; вид на гори</li>
+            <li>&#10003; окрема гардеробна</li>
+            <li>&#10003; шафа купе</li>
+            <li>&#10003; електронний сейф</li>
+        </ul>
+    </div>
+</div>
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+
+
+    <!-- Слайди -->
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="/images/img_5.png" class="d-block w-100" style="height: calc(50% - 1rem);" alt="Los Angeles">
+            <div class="carousel-caption">
+                <h3>Люкс</h3>
+                <p>Одномісний</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="/images/img_6.png" class="d-block w-100" style="height: calc(50% - 1rem);" alt="Los Angeles">
+            <div class="carousel-caption">
+                <h3>Класік R</h3>
+                <p>Двомісний</p>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <img src="/images/img_7.png" class="d-block w-100" style="height: calc(50% - 1rem);" alt="Los Angeles">
+            <div class="carousel-caption">
+                <h3>Напівлюкс</h3>
+                <p>Двомісний</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Контроли ліворуч та праворуч -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </button>
+
+</div>
+
+<div th:insert="blocks/footer::footer"></div>
+</div>
+</body>
+</html>
